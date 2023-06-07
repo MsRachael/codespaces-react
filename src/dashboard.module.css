@@ -1,0 +1,39 @@
+.dashboard {
+  height: calc(100vh - 80px);
+  padding: 14px;
+  margin: 30px 60px;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hide{
+  display: none;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.button {
+  padding: 8px;
+  font-size: 18px;
+  width: 150px;
+  border-radius: 6px;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  background-color: #ffc9bb;
+  font-weight: 600;
+  height: 40px;
+}
+
+.button:hover {
+  background-color: #d1411e;
+  color: #fff;
+}

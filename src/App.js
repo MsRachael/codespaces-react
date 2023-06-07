@@ -1,29 +1,25 @@
-import './App.css';
+import React, { useState } from "react";
+import styles from "./dashboard.module.css";
+import NewProd from "./NewProd";
 
-function App() {
+const App = () => {
+  const [isClick, setIsClick] = useState(true)
+
+  const handleForm = () => {
+    setIsClick(!isClick)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
+    <div className={styles.dashboard}>
+      <div className={styles.heading}>
+        <span className={styles.title}>Admin Dashboard</span>
+        <button className={`${styles.button} ${isClick ? styles.hide : ''}`} onClick={handleForm}>Add Item</button>
+      </div>
+      {
+        isClick ? <NewProd isClick={isClick} setIsClick={setIsClick} /> : ''
+      }
     </div>
   );
-}
+};
 
 export default App;
